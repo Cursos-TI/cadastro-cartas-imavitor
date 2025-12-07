@@ -40,6 +40,18 @@
     float densidade2 = (float) populacao2/area2;
     float PIBPC1 = PIB1/populacao1; //PIBPC = PIB Per Capita
     float PIBPC2 = PIB2/populacao2;
+    //somando o superpoder
+    float superpoder1 = area1 + (float)populacao1 + PIB1 + (float)npturisticos1;
+    float superpoder2 = area2 + (float)populacao2 + PIB2 + (float)npturisticos2;
+    //comparando as variaveis
+    int populacao,npturisticos,area,PIB,densidade,PIBPC,superpoder;
+     populacao = populacao1 > populacao2;
+     npturisticos = npturisticos1 > npturisticos2;
+     area = area1 > area2;
+     PIB = PIB1 > PIB2;
+     densidade = densidade1 > densidade2;
+     PIBPC = PIBPC1 > PIBPC2;
+     superpoder = superpoder1 > superpoder2;
 
     //exibição da tela da primeira carta, variáveis declaradas no mesmo print com quebra para não repetir o comando print
         printf("Carta 1\n Estado: %s\n Código: %s\n Nome da Cidade: %s\n População %d\n Área: %.2f km²\n PIB: %.2f reais\n Número de Pontos Turísticos: %d\n", estado1, codigo1, cidade1, populacao1, area1, PIB1, npturisticos1);
@@ -48,6 +60,15 @@
     //exibição da tela da segunda carta, variáveis declaradas no mesmo print com quebra para não repetir o comando print
         printf("Carta 2\n Estado: %s\n Código: %s\n Nome da Cidade: %s\n População %d\n Área: %.2f km²\n PIB: %.2f reais\n Número de Pontos Turísticos: %d\n", estado2, codigo2, cidade2, populacao2, area2, PIB2, npturisticos2);
         printf(" Densidade Populacional: %.2f hab/km²\n PIB Per Capita: %.2f reais\n ", densidade2, PIBPC2);
-       
+    //imprimindo o resultado das comparações (escolhi a carta 1 como referência 1 é verdadeiro, 0 é falso, ou seja carta 2 venceu)
+
+        printf("Comparação de Cartas: \n");
+        printf("População: Carta 1 venceu (%d)\n", populacao);
+        printf("Área: Carta 1 venceu (%d)\n", area);
+        printf("PIB: Carta 1 venceu (%d)\n", PIB);
+        printf("Pontos Turísticos: Carta 1 venceu (%d)\n", npturisticos);
+        printf("Densidade Populacional: Carta 1 venceu (%d)\n", densidade);
+        printf("PIB per Capita: Carta 1 venceu (%d)\n", PIBPC);
+        printf("Super Poder: Carta 1 venceu (%d)\n", superpoder);
         return 0;
     }
